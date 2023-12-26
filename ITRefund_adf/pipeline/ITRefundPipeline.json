@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "DataCopy",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -24,9 +24,22 @@
 							"supportRFC5988": "true"
 						}
 					},
+					"sink": {
+						"type": "RestSink",
+						"httpRequestTimeout": "00:05:00",
+						"requestInterval": 10,
+						"writeBatchSize": 10000,
+						"httpCompressionType": "none"
+					},
 					"enableStaging": false
 				},
 				"inputs": [
+					{
+						"referenceName": "ITRefundAPI",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
 					{
 						"referenceName": "ITRefundAPI",
 						"type": "DatasetReference"
