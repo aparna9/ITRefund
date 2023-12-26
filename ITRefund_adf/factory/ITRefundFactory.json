@@ -1,0 +1,9 @@
+{
+	"name": "ITRefundFactory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c0e836f7-d411-4db6-b8b1-b59030cf99da",
+		"tenantId": "056e6750-b527-40b5-bc55-1d8da5c3ffe4"
+	}
+}
