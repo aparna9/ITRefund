@@ -1,0 +1,12 @@
+{
+	"name": "AzurePostgreSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LoadDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzurePostgreSqlTable",
+		"schema": []
+	}
+}
