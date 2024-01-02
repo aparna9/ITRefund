@@ -17,10 +17,10 @@
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     inferDriftedColumnTypes: true,",
 				"     httpMethod: 'GET',",
 				"     timeout: 30,",
-				"     paginationRules: ['supportRFC5988' -> 'true'],",
-				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'singleDocument']) ~> fromAPI"
+				"     paginationRules: ['supportRFC5988' -> 'true']) ~> fromAPI"
 			]
 		}
 	}
