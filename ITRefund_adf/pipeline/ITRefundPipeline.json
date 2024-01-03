@@ -54,7 +54,7 @@
 				]
 			},
 			{
-				"name": "ForEach1",
+				"name": "ApiCallLoop",
 				"type": "ForEach",
 				"dependsOn": [],
 				"userProperties": [],
