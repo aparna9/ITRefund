@@ -1,0 +1,17 @@
+{
+	"name": "itrefundjson",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "itrefundblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation"
+			}
+		},
+		"schema": {}
+	}
+}
