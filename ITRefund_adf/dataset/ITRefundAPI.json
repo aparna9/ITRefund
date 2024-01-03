@@ -8,7 +8,7 @@
 		"parameters": {
 			"page[number]=": {
 				"type": "int",
-				"defaultValue": 1
+				"defaultValue": 4
 			}
 		},
 		"annotations": [],
