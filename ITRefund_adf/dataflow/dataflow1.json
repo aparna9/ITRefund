@@ -20,7 +20,8 @@
 				"     httpMethod: 'GET',",
 				"     timeout: 30,",
 				"     requestInterval: 0,",
-				"     paginationRules: ['supportRFC5988' -> 'true']) ~> fromAPI"
+				"     paginationRules: ['supportRFC5988' -> 'true'],",
+				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'documentPerLine']) ~> fromAPI"
 			]
 		}
 	}
