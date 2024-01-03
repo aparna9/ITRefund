@@ -1,12 +1,6 @@
 {
 	"name": "ITRefundAPI",
 	"properties": {
-		"parameters": {
-			"page[number]=": {
-				"type": "int",
-				"defaultValue": 4
-			}
-		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
