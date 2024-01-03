@@ -38,7 +38,10 @@
 				"inputs": [
 					{
 						"referenceName": "ITRefundAPI",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"page[number]=": 4
+						}
 					}
 				],
 				"outputs": [
