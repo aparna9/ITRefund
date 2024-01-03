@@ -59,11 +59,6 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
-					"items": {
-						"value": "@activity('itrefundapicall').output",
-						"type": "Expression"
-					},
-					"isSequential": true,
 					"activities": [
 						{
 							"name": "itrefundapicall",
@@ -78,8 +73,11 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/income_tax_refunds_issued",
 								"method": "GET"
+							},
+							"linkedServiceName": {
+								"referenceName": "itrefundweb",
+								"type": "LinkedServiceReference"
 							}
 						}
 					]
