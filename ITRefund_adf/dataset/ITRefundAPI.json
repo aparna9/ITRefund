@@ -1,6 +1,10 @@
 {
 	"name": "ITRefundAPI",
 	"properties": {
+		"linkedServiceName": {
+			"referenceName": "itrefundrest",
+			"type": "LinkedServiceReference"
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
