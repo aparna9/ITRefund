@@ -5,6 +5,12 @@
 			"referenceName": "RestService1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"page[number]=": {
+				"type": "int",
+				"defaultValue": 1
+			}
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
