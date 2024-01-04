@@ -189,7 +189,13 @@
 							"outputs": [
 								{
 									"referenceName": "itrefundcsv",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"FileName": {
+											"value": "itrefund@{item()}.csv",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
