@@ -59,6 +59,17 @@
 										"supportRFC5988": "true"
 									}
 								},
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSettings"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
 								"enableStaging": false,
 								"translator": {
 									"type": "TabularTranslator",
@@ -142,6 +153,12 @@
 											"type": "Expression"
 										}
 									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "itrefundcsv",
+									"type": "DatasetReference"
 								}
 							]
 						}
