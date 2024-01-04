@@ -76,7 +76,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"param": {
-											"value": "?page[number]=@{item()}",
+											"value": "?page[number]=@{items()}",
 											"type": "Expression"
 										}
 									}
@@ -88,7 +88,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"FileName": {
-											"value": "itrefund@{item()}.json",
+											"value": "itrefund@{items()}.json",
 											"type": "Expression"
 										}
 									}
