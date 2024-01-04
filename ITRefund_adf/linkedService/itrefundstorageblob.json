@@ -1,0 +1,11 @@
+{
+	"name": "itrefundstorageblob",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"containerUri": "https://cs710037ffea99f9759.blob.core.windows.net/home",
+			"authenticationType": "Anonymous"
+		}
+	}
+}
