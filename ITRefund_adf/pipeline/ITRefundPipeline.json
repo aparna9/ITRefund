@@ -49,7 +49,7 @@
 				]
 			},
 			{
-				"name": "Web1",
+				"name": "itrefundweb",
 				"type": "WebActivity",
 				"dependsOn": [],
 				"policy": {
@@ -59,7 +59,11 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/income_tax_refunds_issued",
+					"method": "GET"
+				}
 			}
 		],
 		"annotations": []
