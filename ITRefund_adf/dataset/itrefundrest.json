@@ -5,11 +5,6 @@
 			"referenceName": "itrefundurl",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"QueryParameters": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
