@@ -74,86 +74,366 @@
 									"mappings": [
 										{
 											"source": {
-												"path": "$['data']['record_date']"
+												"path": "['record_date']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['data']['tax_refund_type']"
+												"path": "['tax_refund_type']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['data']['tax_refund_type_desc']"
+												"path": "['tax_refund_type_desc']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['data']['tax_refund_today_amt']"
+												"path": "['tax_refund_today_amt']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['data']['tax_refund_mtd_amt']"
+												"path": "['tax_refund_mtd_amt']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['data']['tax_refund_fytd_amt']"
+												"path": "['tax_refund_fytd_amt']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['data']['table_nbr']"
+												"path": "['table_nbr']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['data']['table_nm']"
+												"path": "['table_nm']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['data']['sub_table_name']"
+												"path": "['sub_table_name']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['data']['src_line_nbr']"
+												"path": "['src_line_nbr']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['data']['record_fiscal_year']"
+												"path": "['record_fiscal_year']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['data']['record_fiscal_quarter']"
+												"path": "['record_fiscal_quarter']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['data']['record_calendar_year']"
+												"path": "['record_calendar_year']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['data']['record_calendar_quarter']"
+												"path": "['record_calendar_quarter']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['data']['record_calendar_month']"
+												"path": "['record_calendar_month']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['data']['record_calendar_day']"
+												"path": "['record_calendar_day']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['count']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['record_date']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['tax_refund_type']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['tax_refund_type_desc']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['tax_refund_today_amt']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['tax_refund_mtd_amt']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['tax_refund_fytd_amt']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['table_nbr']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['table_nm']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['sub_table_name']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['src_line_nbr']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['record_fiscal_year']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['record_fiscal_quarter']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['record_calendar_year']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['record_calendar_quarter']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['record_calendar_month']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['record_calendar_day']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['record_date']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['tax_refund_type']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['tax_refund_type_desc']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['tax_refund_today_amt']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['tax_refund_mtd_amt']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['tax_refund_fytd_amt']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['table_nbr']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['table_nm']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['sub_table_name']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['src_line_nbr']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['record_fiscal_year']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['record_fiscal_quarter']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['record_calendar_year']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['record_calendar_quarter']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['record_calendar_month']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['record_calendar_day']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['record_date']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['tax_refund_type']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['tax_refund_type_desc']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['tax_refund_today_amt']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['tax_refund_mtd_amt']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['tax_refund_fytd_amt']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['table_nbr']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['table_nm']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['sub_table_name']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['src_line_nbr']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['record_fiscal_year']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['record_fiscal_quarter']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['record_calendar_year']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['record_calendar_quarter']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['record_calendar_month']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['record_calendar_day']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['total-count']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['total-pages']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['links']['self']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['links']['first']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['links']['prev']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['links']['next']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['links']['last']"
 											}
 										}
 									],
-									"collectionReference": ""
+									"collectionReference": "$['data']"
 								}
 							},
 							"inputs": [
