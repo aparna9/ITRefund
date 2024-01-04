@@ -88,7 +88,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"FileName": {
-											"value": "itrefund@{items()}.json",
+											"value": "itrefund@{item()}.json",
 											"type": "Expression"
 										}
 									}
