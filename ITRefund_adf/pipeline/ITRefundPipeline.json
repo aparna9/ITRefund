@@ -73,10 +73,7 @@
 							"inputs": [
 								{
 									"referenceName": "itrefundrest",
-									"type": "DatasetReference",
-									"parameters": {
-										"QueryParameters": "?page[number]=1"
-									}
+									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
