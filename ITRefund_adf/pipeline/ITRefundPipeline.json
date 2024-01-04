@@ -20,9 +20,16 @@
 				}
 			},
 			{
-				"name": "ForEach1",
+				"name": "itrefundloop",
 				"type": "ForEach",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "itrefundweb",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": []
 			}
 		],
