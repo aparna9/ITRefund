@@ -72,7 +72,7 @@
 									"referenceName": "ITRefundAPI",
 									"type": "DatasetReference",
 									"parameters": {
-										"QueryParameters": "page[number]=1"
+										"QueryParameters": "?page[number]=1"
 									}
 								}
 							],
