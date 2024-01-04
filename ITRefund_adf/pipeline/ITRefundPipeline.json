@@ -33,7 +33,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@range(1,activity('itrefundweb').output.total-pages)",
+						"value": "@range(1,activity('itrefundweb').output.meta.total-pages)",
 						"type": "Expression"
 					},
 					"activities": [
