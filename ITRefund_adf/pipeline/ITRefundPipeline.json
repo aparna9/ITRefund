@@ -30,7 +30,13 @@
 						]
 					}
 				],
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@range(1,activity('itrefundweb').output.total-pages)",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"annotations": []
