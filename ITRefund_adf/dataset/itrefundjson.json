@@ -5,12 +5,17 @@
 			"referenceName": "itrefundblob",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"FileName": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "itrefund{}",
+				"fileName": "FileName",
 				"folderPath": "aparna",
 				"container": "home"
 			}
