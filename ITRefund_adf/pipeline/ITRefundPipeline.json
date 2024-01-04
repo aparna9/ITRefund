@@ -124,38 +124,6 @@
 										},
 										{
 											"source": {
-												"path": "['table_nbr']"
-											},
-											"sink": {
-												"name": "data'][0]['table_nbr"
-											}
-										},
-										{
-											"source": {
-												"path": "['table_nm']"
-											},
-											"sink": {
-												"name": "data'][0]['table_nm"
-											}
-										},
-										{
-											"source": {
-												"path": "['sub_table_name']"
-											},
-											"sink": {
-												"name": "data'][0]['sub_table_name"
-											}
-										},
-										{
-											"source": {
-												"path": "['src_line_nbr']"
-											},
-											"sink": {
-												"name": "data'][0]['src_line_nbr"
-											}
-										},
-										{
-											"source": {
 												"path": "['record_fiscal_year']"
 											},
 											"sink": {
