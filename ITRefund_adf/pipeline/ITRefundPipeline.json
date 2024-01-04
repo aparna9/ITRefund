@@ -59,6 +59,15 @@
 										"": ""
 									}
 								},
+								"sink": {
+									"type": "JsonSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSettings"
+									},
+									"formatSettings": {
+										"type": "JsonWriteSettings"
+									}
+								},
 								"enableStaging": false
 							},
 							"inputs": [
@@ -68,6 +77,12 @@
 									"parameters": {
 										"QueryParameters": "?page[number]=1"
 									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "itrefundjson",
+									"type": "DatasetReference"
 								}
 							]
 						}
