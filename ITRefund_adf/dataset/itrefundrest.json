@@ -5,6 +5,12 @@
 			"referenceName": "itrefundurl",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"param": {
+				"type": "string",
+				"defaultValue": "?page[number]=1"
+			}
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"schema": []
