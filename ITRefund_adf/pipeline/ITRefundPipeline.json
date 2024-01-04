@@ -85,7 +85,13 @@
 							"outputs": [
 								{
 									"referenceName": "itrefundjson",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"FileName": {
+											"value": "itrefund@{item()}.json",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
