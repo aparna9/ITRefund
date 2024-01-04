@@ -76,7 +76,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"param": {
-											"value": "?page[number]=@activity('itrefundweb').output.",
+											"value": "?page[number]=@{item()}",
 											"type": "Expression"
 										}
 									}
