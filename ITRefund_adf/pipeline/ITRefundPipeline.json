@@ -73,7 +73,13 @@
 							"inputs": [
 								{
 									"referenceName": "itrefundrest",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"param": {
+											"value": "?page[number]=@activity('itrefundweb').output.",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
