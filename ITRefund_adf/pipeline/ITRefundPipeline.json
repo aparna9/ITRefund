@@ -33,7 +33,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@range(1,activity('itrefundweb').output.meta.total-pages)",
+						"value": "@range(1,6)",
 						"type": "Expression"
 					},
 					"activities": [
@@ -76,7 +76,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"param": {
-											"value": "?page[number]=@{items()}",
+											"value": "?page[number]=@{item()}",
 											"type": "Expression"
 										}
 									}
