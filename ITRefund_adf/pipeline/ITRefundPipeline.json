@@ -21,7 +21,7 @@
 						"requestInterval": "00.00:00:00.010",
 						"requestMethod": "GET",
 						"paginationRules": {
-							"QueryParameters.{number}": "RANGE:1:17:1"
+							"QueryParameters.{number}": "$"
 						}
 					},
 					"sink": {
