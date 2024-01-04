@@ -59,15 +59,6 @@
 										"supportRFC5988": "true"
 									}
 								},
-								"sink": {
-									"type": "JsonSink",
-									"storeSettings": {
-										"type": "AzureBlobStorageWriteSettings"
-									},
-									"formatSettings": {
-										"type": "JsonWriteSettings"
-									}
-								},
 								"enableStaging": false,
 								"translator": {
 									"type": "TabularTranslator",
@@ -148,18 +139,6 @@
 									"parameters": {
 										"param": {
 											"value": "?page[number]=@{item()}",
-											"type": "Expression"
-										}
-									}
-								}
-							],
-							"outputs": [
-								{
-									"referenceName": "itrefundjson",
-									"type": "DatasetReference",
-									"parameters": {
-										"FileName": {
-											"value": "itrefund@{item()}.json",
 											"type": "Expression"
 										}
 									}
