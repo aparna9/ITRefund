@@ -14,6 +14,7 @@
 					"secureInput": false
 				},
 				"typeProperties": {
+					"url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/income_tax_refunds_issued?page[number]=1",
 					"method": "GET"
 				}
 			}
