@@ -74,32 +74,42 @@
 									"mappings": [
 										{
 											"source": {
-												"path": "$['data'][0]['record_date']"
+												"path": "$['data']['record_date']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['data'][0]['tax_refund_type']"
+												"path": "$['data']['tax_refund_type']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['data'][0]['tax_refund_type_desc']"
+												"path": "$['data']['tax_refund_type_desc']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['data'][0]['tax_refund_today_amt']"
+												"path": "$['data']['tax_refund_today_amt']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['data'][0]['tax_refund_mtd_amt']"
+												"path": "$['data']['tax_refund_mtd_amt']"
 											}
 										},
 										{
 											"source": {
 												"path": "$['data'][0]['tax_refund_fytd_amt']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['table_nbr']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['table_nm']"
 											}
 										},
 										{
@@ -422,7 +432,8 @@
 												"path": "$['links']['last']"
 											}
 										}
-									]
+									],
+									"collectionReference": ""
 								}
 							},
 							"inputs": [
