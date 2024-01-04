@@ -1,0 +1,12 @@
+{
+	"name": "itrefundrest",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "itrefundurl",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	}
+}
