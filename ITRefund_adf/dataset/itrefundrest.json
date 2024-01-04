@@ -12,6 +12,12 @@
 		},
 		"annotations": [],
 		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@concat('https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/income_tax_refunds_issued',dataset().param)",
+				"type": "Expression"
+			}
+		},
 		"schema": []
 	}
 }
