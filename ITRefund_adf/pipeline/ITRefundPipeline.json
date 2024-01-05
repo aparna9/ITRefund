@@ -74,7 +74,8 @@
 												"path": "['record_date']"
 											},
 											"sink": {
-												"name": "data'][0]['record_date"
+												"name": "record_date",
+												"type": "DateTime"
 											}
 										},
 										{
@@ -82,7 +83,8 @@
 												"path": "['tax_refund_type']"
 											},
 											"sink": {
-												"name": "data'][0]['tax_refund_type"
+												"name": "tax_refund_type",
+												"type": "String"
 											}
 										},
 										{
@@ -90,7 +92,8 @@
 												"path": "['tax_refund_type_desc']"
 											},
 											"sink": {
-												"name": "data'][0]['tax_refund_type_desc"
+												"name": "tax_refund_type_desc",
+												"type": "String"
 											}
 										},
 										{
@@ -98,7 +101,8 @@
 												"path": "['tax_refund_today_amt']"
 											},
 											"sink": {
-												"name": "data'][0]['tax_refund_today_amt"
+												"name": "tax_refund_today_amt",
+												"type": "Decimal"
 											}
 										},
 										{
@@ -106,7 +110,8 @@
 												"path": "['tax_refund_mtd_amt']"
 											},
 											"sink": {
-												"name": "data'][0]['tax_refund_mtd_amt"
+												"name": "tax_refund_mtd_amt",
+												"type": "Decimal"
 											}
 										},
 										{
@@ -114,7 +119,44 @@
 												"path": "['tax_refund_fytd_amt']"
 											},
 											"sink": {
-												"name": "data'][0]['tax_refund_fytd_amt"
+												"name": "tax_refund_fytd_amt",
+												"type": "Decimal"
+											}
+										},
+										{
+											"source": {
+												"path": "['table_nbr']"
+											},
+											"sink": {
+												"name": "table_nbr",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['table_nm']"
+											},
+											"sink": {
+												"name": "table_nm",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['sub_table_name']"
+											},
+											"sink": {
+												"name": "sub_table_name",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['src_line_nbr']"
+											},
+											"sink": {
+												"name": "src_line_nbr",
+												"type": "Int32"
 											}
 										},
 										{
@@ -122,7 +164,8 @@
 												"path": "['record_fiscal_year']"
 											},
 											"sink": {
-												"name": "data'][0]['record_fiscal_year"
+												"name": "record_fiscal_year",
+												"type": "Int32"
 											}
 										},
 										{
@@ -130,7 +173,8 @@
 												"path": "['record_fiscal_quarter']"
 											},
 											"sink": {
-												"name": "data'][0]['record_fiscal_quarter"
+												"name": "record_fiscal_quarter",
+												"type": "Int32"
 											}
 										},
 										{
@@ -138,7 +182,8 @@
 												"path": "['record_calendar_year']"
 											},
 											"sink": {
-												"name": "data'][0]['record_calendar_year"
+												"name": "record_calendar_year",
+												"type": "Int32"
 											}
 										},
 										{
@@ -146,7 +191,8 @@
 												"path": "['record_calendar_quarter']"
 											},
 											"sink": {
-												"name": "data'][0]['record_calendar_quarter"
+												"name": "record_calendar_quarter",
+												"type": "Int32"
 											}
 										},
 										{
@@ -154,7 +200,8 @@
 												"path": "['record_calendar_month']"
 											},
 											"sink": {
-												"name": "data'][0]['record_calendar_month"
+												"name": "record_calendar_month",
+												"type": "Int32"
 											}
 										},
 										{
@@ -162,7 +209,480 @@
 												"path": "['record_calendar_day']"
 											},
 											"sink": {
-												"name": "data'][0]['record_calendar_day"
+												"name": "record_calendar_day",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['count']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['record_date']"
+											},
+											"sink": {
+												"name": "record_date",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['tax_refund_type']"
+											},
+											"sink": {
+												"name": "tax_refund_type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['tax_refund_type_desc']"
+											},
+											"sink": {
+												"name": "tax_refund_type_desc",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['tax_refund_today_amt']"
+											},
+											"sink": {
+												"name": "tax_refund_today_amt",
+												"type": "Decimal"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['tax_refund_mtd_amt']"
+											},
+											"sink": {
+												"name": "tax_refund_mtd_amt",
+												"type": "Decimal"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['tax_refund_fytd_amt']"
+											},
+											"sink": {
+												"name": "tax_refund_fytd_amt",
+												"type": "Decimal"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['table_nbr']"
+											},
+											"sink": {
+												"name": "table_nbr",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['table_nm']"
+											},
+											"sink": {
+												"name": "table_nm",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['sub_table_name']"
+											},
+											"sink": {
+												"name": "sub_table_name",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['src_line_nbr']"
+											},
+											"sink": {
+												"name": "src_line_nbr",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['record_fiscal_year']"
+											},
+											"sink": {
+												"name": "record_fiscal_year",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['record_fiscal_quarter']"
+											},
+											"sink": {
+												"name": "record_fiscal_quarter",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['record_calendar_year']"
+											},
+											"sink": {
+												"name": "record_calendar_year",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['record_calendar_quarter']"
+											},
+											"sink": {
+												"name": "record_calendar_quarter",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['record_calendar_month']"
+											},
+											"sink": {
+												"name": "record_calendar_month",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['labels']['record_calendar_day']"
+											},
+											"sink": {
+												"name": "record_calendar_day",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['record_date']"
+											},
+											"sink": {
+												"name": "record_date",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['tax_refund_type']"
+											},
+											"sink": {
+												"name": "tax_refund_type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['tax_refund_type_desc']"
+											},
+											"sink": {
+												"name": "tax_refund_type_desc",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['tax_refund_today_amt']"
+											},
+											"sink": {
+												"name": "tax_refund_today_amt",
+												"type": "Decimal"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['tax_refund_mtd_amt']"
+											},
+											"sink": {
+												"name": "tax_refund_mtd_amt",
+												"type": "Decimal"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['tax_refund_fytd_amt']"
+											},
+											"sink": {
+												"name": "tax_refund_fytd_amt",
+												"type": "Decimal"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['table_nbr']"
+											},
+											"sink": {
+												"name": "table_nbr",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['table_nm']"
+											},
+											"sink": {
+												"name": "table_nm",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['sub_table_name']"
+											},
+											"sink": {
+												"name": "sub_table_name",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['src_line_nbr']"
+											},
+											"sink": {
+												"name": "src_line_nbr",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['record_fiscal_year']"
+											},
+											"sink": {
+												"name": "record_fiscal_year",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['record_fiscal_quarter']"
+											},
+											"sink": {
+												"name": "record_fiscal_quarter",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['record_calendar_year']"
+											},
+											"sink": {
+												"name": "record_calendar_year",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['record_calendar_quarter']"
+											},
+											"sink": {
+												"name": "record_calendar_quarter",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['record_calendar_month']"
+											},
+											"sink": {
+												"name": "record_calendar_month",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataTypes']['record_calendar_day']"
+											},
+											"sink": {
+												"name": "record_calendar_day",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['record_date']"
+											},
+											"sink": {
+												"name": "record_date",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['tax_refund_type']"
+											},
+											"sink": {
+												"name": "tax_refund_type",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['tax_refund_type_desc']"
+											},
+											"sink": {
+												"name": "tax_refund_type_desc",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['tax_refund_today_amt']"
+											},
+											"sink": {
+												"name": "tax_refund_today_amt",
+												"type": "Decimal"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['tax_refund_mtd_amt']"
+											},
+											"sink": {
+												"name": "tax_refund_mtd_amt",
+												"type": "Decimal"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['tax_refund_fytd_amt']"
+											},
+											"sink": {
+												"name": "tax_refund_fytd_amt",
+												"type": "Decimal"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['table_nbr']"
+											},
+											"sink": {
+												"name": "table_nbr",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['table_nm']"
+											},
+											"sink": {
+												"name": "table_nm",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['sub_table_name']"
+											},
+											"sink": {
+												"name": "sub_table_name",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['src_line_nbr']"
+											},
+											"sink": {
+												"name": "src_line_nbr",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['record_fiscal_year']"
+											},
+											"sink": {
+												"name": "record_fiscal_year",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['record_fiscal_quarter']"
+											},
+											"sink": {
+												"name": "record_fiscal_quarter",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['record_calendar_year']"
+											},
+											"sink": {
+												"name": "record_calendar_year",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['record_calendar_quarter']"
+											},
+											"sink": {
+												"name": "record_calendar_quarter",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['record_calendar_month']"
+											},
+											"sink": {
+												"name": "record_calendar_month",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['dataFormats']['record_calendar_day']"
+											},
+											"sink": {
+												"name": "record_calendar_day",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['total-count']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['meta']['total-pages']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['links']['self']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['links']['first']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['links']['prev']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['links']['next']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['links']['last']"
 											}
 										}
 									],
