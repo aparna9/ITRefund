@@ -1,0 +1,12 @@
+{
+	"name": "itrefundsourcetables",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "itrefundpostgresfact",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzurePostgreSqlTable",
+		"schema": []
+	}
+}

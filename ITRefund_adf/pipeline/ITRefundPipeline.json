@@ -60,15 +60,10 @@
 									}
 								},
 								"sink": {
-									"type": "DelimitedTextSink",
-									"storeSettings": {
-										"type": "AzureBlobStorageWriteSettings"
-									},
-									"formatSettings": {
-										"type": "DelimitedTextWriteSettings",
-										"quoteAllText": true,
-										"fileExtension": ".txt"
-									}
+									"type": "AzurePostgreSQLSink",
+									"writeBatchSize": 1000000,
+									"writeBatchTimeout": "00:30:00",
+									"writeMethod": "CopyCommand"
 								},
 								"enableStaging": false,
 								"translator": {
@@ -188,14 +183,8 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "itrefundcsv",
-									"type": "DatasetReference",
-									"parameters": {
-										"FileName": {
-											"value": "itrefund@{item()}.csv",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "itrefundsourcetables",
+									"type": "DatasetReference"
 								}
 							]
 						}
