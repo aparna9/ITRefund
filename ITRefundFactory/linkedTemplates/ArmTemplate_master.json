@@ -1,0 +1,91 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ITRefundFactory"
+		},
+		"itrefundblob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'itrefundblob'"
+		},
+		"itrefundpostgresfact_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'itrefundpostgresfact'"
+		},
+		"itrefundstorageblob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'itrefundstorageblob'"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://ITRefundVault.vault.azure.net/"
+		},
+		"itrefundrest_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/income_tax_refunds_issued"
+		},
+		"itrefundurl_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/income_tax_refunds_issued"
+		},
+		"itrefundweb_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/income_tax_refunds_issued"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ITRefundFactory_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"itrefundblob_connectionString": {
+						"value": "[parameters('itrefundblob_connectionString')]"
+					},
+					"itrefundpostgresfact_connectionString": {
+						"value": "[parameters('itrefundpostgresfact_connectionString')]"
+					},
+					"itrefundstorageblob_connectionString": {
+						"value": "[parameters('itrefundstorageblob_connectionString')]"
+					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
+					"itrefundrest_properties_typeProperties_url": {
+						"value": "[parameters('itrefundrest_properties_typeProperties_url')]"
+					},
+					"itrefundurl_properties_typeProperties_url": {
+						"value": "[parameters('itrefundurl_properties_typeProperties_url')]"
+					},
+					"itrefundweb_properties_typeProperties_url": {
+						"value": "[parameters('itrefundweb_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

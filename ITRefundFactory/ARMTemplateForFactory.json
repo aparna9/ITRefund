@@ -1,0 +1,483 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ITRefundFactory"
+		},
+		"itrefundblob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'itrefundblob'"
+		},
+		"itrefundpostgresfact_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'itrefundpostgresfact'"
+		},
+		"itrefundstorageblob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'itrefundstorageblob'"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://ITRefundVault.vault.azure.net/"
+		},
+		"itrefundrest_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/income_tax_refunds_issued"
+		},
+		"itrefundurl_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/income_tax_refunds_issued"
+		},
+		"itrefundweb_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/income_tax_refunds_issued"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/ITRefundPipeline')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "itrefundweb",
+						"type": "WebActivity",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/income_tax_refunds_issued?page[number]=1",
+							"method": "GET",
+							"headers": {}
+						}
+					},
+					{
+						"name": "itrefundloop",
+						"type": "ForEach",
+						"dependsOn": [
+							{
+								"activity": "itrefundweb",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@range(1, int(activity('itrefundweb').output['meta']['total-pages']))\n",
+								"type": "Expression"
+							},
+							"activities": [
+								{
+									"name": "itrefundcopy",
+									"type": "Copy",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "0.12:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"source": {
+											"type": "RestSource",
+											"httpRequestTimeout": "00:01:40",
+											"requestInterval": "00.00:00:00.010",
+											"requestMethod": "GET",
+											"paginationRules": {
+												"supportRFC5988": "true"
+											}
+										},
+										"sink": {
+											"type": "AzurePostgreSQLSink",
+											"writeBatchSize": 1000000,
+											"writeBatchTimeout": "00:30:00",
+											"writeMethod": "BulkInsert"
+										},
+										"enableStaging": false,
+										"translator": {
+											"type": "TabularTranslator",
+											"mappings": [
+												{
+													"source": {
+														"path": "[['record_date']"
+													},
+													"sink": {
+														"name": "record_date",
+														"type": "DateTime"
+													}
+												},
+												{
+													"source": {
+														"path": "[['tax_refund_type']"
+													},
+													"sink": {
+														"name": "tax_refund_type",
+														"type": "String"
+													}
+												},
+												{
+													"source": {
+														"path": "[['tax_refund_type_desc']"
+													},
+													"sink": {
+														"name": "tax_refund_type_desc",
+														"type": "String"
+													}
+												},
+												{
+													"source": {
+														"path": "[['tax_refund_today_amt']"
+													},
+													"sink": {
+														"name": "tax_refund_today_amt",
+														"type": "Decimal"
+													}
+												},
+												{
+													"source": {
+														"path": "[['tax_refund_mtd_amt']"
+													},
+													"sink": {
+														"name": "tax_refund_mtd_amt",
+														"type": "Decimal"
+													}
+												},
+												{
+													"source": {
+														"path": "[['tax_refund_fytd_amt']"
+													},
+													"sink": {
+														"name": "tax_refund_fytd_amt",
+														"type": "Decimal"
+													}
+												},
+												{
+													"source": {
+														"path": "[['table_nbr']"
+													},
+													"sink": {
+														"name": "table_nbr",
+														"type": "String"
+													}
+												},
+												{
+													"source": {
+														"path": "[['table_nm']"
+													},
+													"sink": {
+														"name": "table_nm",
+														"type": "String"
+													}
+												},
+												{
+													"source": {
+														"path": "[['sub_table_name']"
+													},
+													"sink": {
+														"name": "sub_table_name",
+														"type": "String"
+													}
+												},
+												{
+													"source": {
+														"path": "[['src_line_nbr']"
+													},
+													"sink": {
+														"name": "src_line_nbr",
+														"type": "Int32"
+													}
+												},
+												{
+													"source": {
+														"path": "[['record_fiscal_year']"
+													},
+													"sink": {
+														"name": "record_fiscal_year",
+														"type": "Int32"
+													}
+												},
+												{
+													"source": {
+														"path": "[['record_fiscal_quarter']"
+													},
+													"sink": {
+														"name": "record_fiscal_quarter",
+														"type": "Int32"
+													}
+												},
+												{
+													"source": {
+														"path": "[['record_calendar_year']"
+													},
+													"sink": {
+														"name": "record_calendar_year",
+														"type": "Int32"
+													}
+												},
+												{
+													"source": {
+														"path": "[['record_calendar_quarter']"
+													},
+													"sink": {
+														"name": "record_calendar_quarter",
+														"type": "Int32"
+													}
+												},
+												{
+													"source": {
+														"path": "[['record_calendar_month']"
+													},
+													"sink": {
+														"name": "record_calendar_month",
+														"type": "Int32"
+													}
+												},
+												{
+													"source": {
+														"path": "[['record_calendar_day']"
+													},
+													"sink": {
+														"name": "record_calendar_day",
+														"type": "Int32"
+													}
+												}
+											],
+											"collectionReference": "$['data']",
+											"mapComplexValuesToString": true
+										}
+									},
+									"inputs": [
+										{
+											"referenceName": "itrefundrest",
+											"type": "DatasetReference",
+											"parameters": {
+												"param": {
+													"value": "?page[number]=@{item()}",
+													"type": "Expression"
+												}
+											}
+										}
+									],
+									"outputs": [
+										{
+											"referenceName": "itrefundsourcetables",
+											"type": "DatasetReference",
+											"parameters": {}
+										}
+									]
+								}
+							]
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/itrefundrest')]",
+				"[concat(variables('factoryId'), '/datasets/itrefundsourcetables')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/itrefundcsv')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "itrefundstorageblob",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"FileName": {
+						"type": "string"
+					}
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@dataset().FileName",
+							"type": "Expression"
+						},
+						"folderPath": "itrefund",
+						"container": "home"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/itrefundstorageblob')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/itrefundrest')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "itrefundurl",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"param": {
+						"type": "string"
+					}
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {
+					"relativeUrl": {
+						"value": "@concat('https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/income_tax_refunds_issued',dataset().param)",
+						"type": "Expression"
+					}
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/itrefundurl')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/itrefundsourcetables')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "itrefundpostgresfact",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzurePostgreSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "public",
+					"table": "itrefund_source"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/itrefundpostgresfact')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureKeyVault1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureKeyVault",
+				"typeProperties": {
+					"baseUrl": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/itrefundblob')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('itrefundblob_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/itrefundpostgresfact')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzurePostgreSql",
+				"typeProperties": {
+					"connectionString": "[parameters('itrefundpostgresfact_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/itrefundrest')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('itrefundrest_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": false,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/itrefundstorageblob')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('itrefundstorageblob_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/itrefundurl')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('itrefundurl_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/itrefundweb')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "WebConnection",
+				"typeProperties": {
+					"url": "[parameters('itrefundweb_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": false
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

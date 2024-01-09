@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ITRefundFactory"
+		},
+		"itrefundblob_connectionString": {
+			"value": ""
+		},
+		"itrefundpostgresfact_connectionString": {
+			"value": ""
+		},
+		"itrefundstorageblob_connectionString": {
+			"value": ""
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://ITRefundVault.vault.azure.net/"
+		},
+		"itrefundrest_properties_typeProperties_url": {
+			"value": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/income_tax_refunds_issued"
+		},
+		"itrefundurl_properties_typeProperties_url": {
+			"value": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/income_tax_refunds_issued"
+		},
+		"itrefundweb_properties_typeProperties_url": {
+			"value": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/income_tax_refunds_issued"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
