@@ -7,10 +7,6 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ITRefundFactory"
 		},
-		"itrefundblob_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'itrefundblob'"
-		},
 		"itrefundpostgresfact_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'itrefundpostgresfact'"
@@ -61,9 +57,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"itrefundblob_connectionString": {
-						"value": "[parameters('itrefundblob_connectionString')]"
 					},
 					"itrefundpostgresfact_connectionString": {
 						"value": "[parameters('itrefundpostgresfact_connectionString')]"
