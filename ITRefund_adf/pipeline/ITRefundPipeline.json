@@ -224,7 +224,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"param": {
-											"value": "?page[size]=10000&page[number]=@{item()}",
+											"value": "?page[size]=8000&page[number]=@{item()}",
 											"type": "Expression"
 										}
 									}
