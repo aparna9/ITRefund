@@ -1,0 +1,113 @@
+{
+	"name": "itrefundstoredproc",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "itrefundpostgresfact",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzurePostgreSqlTable",
+		"schema": [
+			{
+				"name": "record_date",
+				"type": "date",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "tax_refund_type",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "tax_refund_type_desc",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "tax_refund_today_amt",
+				"type": "numeric",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "tax_refund_mtd_amt",
+				"type": "numeric",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "tax_refund_fytd_amt",
+				"type": "numeric",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "table_nbr",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "table_nm",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "sub_table_name",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "src_line_nbr",
+				"type": "integer",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "record_fiscal_year",
+				"type": "integer",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "record_fiscal_quarter",
+				"type": "integer",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "record_calendar_year",
+				"type": "integer",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "record_calendar_quarter",
+				"type": "integer",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "record_calendar_month",
+				"type": "integer",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "record_calendar_day",
+				"type": "integer",
+				"precision": 0,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "public",
+			"table": "itrefund_source"
+		}
+	}
+}
