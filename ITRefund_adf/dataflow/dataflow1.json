@@ -10,9 +10,6 @@
 						"type": "DatasetReference"
 					},
 					"name": "tablesource"
-				},
-				{
-					"name": "source1"
 				}
 			],
 			"sinks": [],
@@ -21,9 +18,7 @@
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
-				"     format: 'table') ~> tablesource",
-				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source1"
+				"     format: 'table') ~> tablesource"
 			]
 		}
 	}
