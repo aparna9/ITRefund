@@ -1,0 +1,25 @@
+{
+	"name": "ITRefundPipelineTrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "ITRefundPipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2024-01-12T16:15:00",
+				"endTime": "2024-01-14T16:15:00",
+				"timeZone": "Central Standard Time"
+			}
+		}
+	}
+}
