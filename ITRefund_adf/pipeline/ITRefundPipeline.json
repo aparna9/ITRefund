@@ -271,7 +271,14 @@
 			{
 				"name": "itrefundcondcheck",
 				"type": "IfCondition",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "itrefundcountcheck",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": []
 			}
 		],
