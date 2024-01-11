@@ -264,7 +264,17 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzurePostgreSqlSource",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "itrefundsourcetables",
+						"type": "DatasetReference"
+					}
+				}
 			}
 		],
 		"annotations": []
