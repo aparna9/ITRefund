@@ -255,7 +255,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzurePostgreSqlSource",
-						"query": "select count(*) as from itrefund_source;",
+						"query": "select count(*) as rowcount from itrefund_source;",
 						"partitionOption": "None"
 					},
 					"dataset": {
