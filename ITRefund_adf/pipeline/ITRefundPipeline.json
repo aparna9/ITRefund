@@ -7,7 +7,7 @@
 				"type": "WebActivity",
 				"dependsOn": [
 					{
-						"activity": "itrefundcondcheck",
+						"activity": "itrefundcountcheck",
 						"dependencyConditions": [
 							"Succeeded"
 						]
