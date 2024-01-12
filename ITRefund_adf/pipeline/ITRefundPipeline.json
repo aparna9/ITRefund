@@ -5,6 +5,8 @@
 			{
 				"name": "itrefundweb",
 				"type": "WebActivity",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "itrefundcountcheck",
@@ -29,6 +31,8 @@
 			{
 				"name": "itrefundloop",
 				"type": "ForEach",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "itrefundweb",
