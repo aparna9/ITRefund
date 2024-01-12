@@ -282,7 +282,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@greater(activity('itrefundcountcheck').output,0)",
+						"value": "@greater(activity('itrefundcountcheck').output.firstRow.rowcount,0)",
 						"type": "Expression"
 					}
 				}
