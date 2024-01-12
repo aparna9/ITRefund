@@ -278,14 +278,9 @@
 			{
 				"name": "itrefundcondcheck",
 				"type": "IfCondition",
-				"dependsOn": [
-					{
-						"activity": "itrefundcountcheck",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
