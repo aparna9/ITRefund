@@ -308,7 +308,7 @@
 							"typeProperties": {
 								"source": {
 									"type": "AzurePostgreSqlSource",
-									"query": "delete from itrefund_source;",
+									"query": "delete from public.itrefund_source;",
 									"partitionOption": "None"
 								},
 								"sink": {
