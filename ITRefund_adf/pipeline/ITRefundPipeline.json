@@ -5,11 +5,9 @@
 			{
 				"name": "itrefundweb",
 				"type": "WebActivity",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
-						"activity": "itrefundcondcheck",
+						"activity": "itrefundcountcheck",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -31,8 +29,6 @@
 			{
 				"name": "itrefundloop",
 				"type": "ForEach",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "itrefundweb",
@@ -280,14 +276,7 @@
 				"type": "IfCondition",
 				"state": "Inactive",
 				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [
-					{
-						"activity": "itrefundcountcheck",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
