@@ -308,7 +308,6 @@
 							"typeProperties": {
 								"source": {
 									"type": "AzurePostgreSqlSource",
-									"query": "delete from public.itrefund_source;",
 									"partitionOption": "None"
 								},
 								"sink": {
@@ -322,6 +321,9 @@
 									"type": "TabularTranslator",
 									"mappings": [
 										{
+											"source": {
+												"name": ""
+											},
 											"sink": {
 												"name": "record_date",
 												"type": "DateTime",
@@ -329,6 +331,9 @@
 											}
 										},
 										{
+											"source": {
+												"name": ""
+											},
 											"sink": {
 												"name": "tax_refund_type",
 												"type": "String",
@@ -336,6 +341,9 @@
 											}
 										},
 										{
+											"source": {
+												"name": ""
+											},
 											"sink": {
 												"name": "tax_refund_type_desc",
 												"type": "String",
@@ -343,6 +351,9 @@
 											}
 										},
 										{
+											"source": {
+												"name": ""
+											},
 											"sink": {
 												"name": "tax_refund_today_amt",
 												"type": "Decimal",
@@ -350,6 +361,9 @@
 											}
 										},
 										{
+											"source": {
+												"name": ""
+											},
 											"sink": {
 												"name": "tax_refund_mtd_amt",
 												"type": "Decimal",
@@ -357,6 +371,9 @@
 											}
 										},
 										{
+											"source": {
+												"name": ""
+											},
 											"sink": {
 												"name": "tax_refund_fytd_amt",
 												"type": "Decimal",
@@ -364,6 +381,9 @@
 											}
 										},
 										{
+											"source": {
+												"name": ""
+											},
 											"sink": {
 												"name": "table_nbr",
 												"type": "String",
@@ -371,6 +391,9 @@
 											}
 										},
 										{
+											"source": {
+												"name": ""
+											},
 											"sink": {
 												"name": "table_nm",
 												"type": "String",
@@ -378,6 +401,9 @@
 											}
 										},
 										{
+											"source": {
+												"name": ""
+											},
 											"sink": {
 												"name": "sub_table_name",
 												"type": "String",
@@ -385,6 +411,9 @@
 											}
 										},
 										{
+											"source": {
+												"name": ""
+											},
 											"sink": {
 												"name": "src_line_nbr",
 												"type": "Int32",
@@ -392,6 +421,9 @@
 											}
 										},
 										{
+											"source": {
+												"name": ""
+											},
 											"sink": {
 												"name": "record_fiscal_year",
 												"type": "Int32",
@@ -399,6 +431,9 @@
 											}
 										},
 										{
+											"source": {
+												"name": ""
+											},
 											"sink": {
 												"name": "record_fiscal_quarter",
 												"type": "Int32",
@@ -406,6 +441,9 @@
 											}
 										},
 										{
+											"source": {
+												"name": ""
+											},
 											"sink": {
 												"name": "record_calendar_year",
 												"type": "Int32",
@@ -413,6 +451,9 @@
 											}
 										},
 										{
+											"source": {
+												"name": ""
+											},
 											"sink": {
 												"name": "record_calendar_quarter",
 												"type": "Int32",
@@ -420,6 +461,9 @@
 											}
 										},
 										{
+											"source": {
+												"name": ""
+											},
 											"sink": {
 												"name": "record_calendar_month",
 												"type": "Int32",
@@ -427,6 +471,9 @@
 											}
 										},
 										{
+											"source": {
+												"name": ""
+											},
 											"sink": {
 												"name": "record_calendar_day",
 												"type": "Int32",
