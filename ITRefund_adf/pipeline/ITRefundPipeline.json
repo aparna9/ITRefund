@@ -278,8 +278,6 @@
 			{
 				"name": "itrefundcondcheck",
 				"type": "IfCondition",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "itrefundcountcheck",
