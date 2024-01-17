@@ -67,10 +67,9 @@
 									}
 								},
 								"sink": {
-									"type": "AzurePostgreSQLSink",
-									"writeBatchSize": 1000000,
-									"writeBatchTimeout": "00:30:00",
-									"writeMethod": "CopyCommand"
+									"type": "AzureSqlSink",
+									"writeBehavior": "insert",
+									"sqlWriterUseTableLock": false
 								},
 								"enableStaging": false,
 								"translator": {
@@ -239,7 +238,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "itrefundsourcetables",
+									"referenceName": "itrefundtable",
 									"type": "DatasetReference"
 								}
 							]
