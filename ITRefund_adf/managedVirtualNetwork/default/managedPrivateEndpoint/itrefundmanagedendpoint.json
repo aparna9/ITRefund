@@ -1,0 +1,7 @@
+{
+	"name": "itrefundmanagedendpoint",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/f8412664-8d6a-43fa-a2d5-5e0ac19ef805/resourceGroups/ITRefund/providers/Microsoft.Sql/servers/itrefund",
+		"groupId": "sqlServer"
+	}
+}
