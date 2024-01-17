@@ -29,8 +29,6 @@
 			{
 				"name": "itrefundloop",
 				"type": "ForEach",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "itrefundweb",
